@@ -4,10 +4,10 @@ metadata:
   name: todo-app-service
 spec:
   selector:
-    app: todo-app  # This should match the label in your deployment
+    app: todo-app  # Ensure this matches your pod's label selector
   ports:
     - protocol: TCP
-      port: 80  # Internal port that your app is exposing
-      targetPort: 8000  # Port your Django app is running on inside the container
-      nodePort: 32000  # The port on each node's IP to access the app externally (choose any number between 30000-32767)
-  type: NodePort  # This exposes the app externally using NodePort
+      port: 80       # Port your app is listening on inside the container
+      targetPort: 8000  # Port your app is exposed on inside the container (as defined in the Dockerfile or deployment)
+      nodePort: 30001  # Port exposed on each node for external access
+  type: NodePort
