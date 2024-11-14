@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: todo-app-deployment
+spec:
+  replicas: 1  # You can scale this as needed
+  selector:
+    matchLabels:
+      app: todo-app
+  template:
+    metadata:
+      labels:
+        app: todo-app
+    spec:
+      containers:
+      - name: todo-app
+        image: namandocker101/todo-app:latest  # Use your image name
+        ports:
+        - containerPort: 8000  # Make sure this matches the port exposed by your Django app
