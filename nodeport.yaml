@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: todo-app-service
+spec:
+  selector:
+    app: todo-app  # This should match the label in your deployment
+  ports:
+    - protocol: TCP
+      port: 80  # Internal port that your app is exposing
+      targetPort: 8000  # Port your Django app is running on inside the container
+      nodePort: 32000  # The port on each node's IP to access the app externally (choose any number between 30000-32767)
+  type: NodePort  # This exposes the app externally using NodePort
