@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: todo-app
-        image: namandocker101/todo-app:latest  # Use your image name
+        image: namandocker101/todo-app  # Use your image name
         ports:
         - containerPort: 8000  # Make sure this matches the port exposed by your Django app
