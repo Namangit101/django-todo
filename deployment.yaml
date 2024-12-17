@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: Todo_pipe
+  name: todo_pipe
   labels:
-    app: Todo_pipe 
+    app: todo_pipe 
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: Todo_pipe
+      app: todo_pipe
   template:
     metadata:
       labels:
-        app: Todo_pipe
+        app: todo_pipe
     spec:
       containers:
       - name: myproj
-        image: namandocker101/Todo_pipe
+        image: namandocker101/todo_pipe
         ports:
         - containerPort: 80
